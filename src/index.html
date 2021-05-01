@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Recordatorios Panxo APP</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+  </head>
+  <body class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">General</a>
+      </li>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#detallada" id="detalle">Detalle</a>
+      </li>
+      -->
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#horas" id="">horas</a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#clases" id="">clases</a>
+      </li>
+    </ul>
+    <div id="myTabContent" class="tab-content"><!--HISTORIAS-->
+      <div class="tab-pane fade active show" id="home">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#General_historias" id="general_his">General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Editar_historias" id="Cambio">Agregar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Detalle_historias" id="datalle_his">Detalle</a>
+          </li>
+        </ul> 
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade show active" id="General_historias">
+            <button class="btn btn-success" id="refresh">F5</button>
+            <table class="table condensed">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Ramo</th>
+                  <th>Titulo</th>
+                  <!--<th>Comentario</th>-->
+                  <th>-</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_principal">
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="Editar_historias">
+            <form>
+      
+              <div class="form-group has-success">
+                <input type="hidden" value="" class="form-control is-valid" id="row">
+                <label class="form-control-label" for="inputValid">Titulo</label>
+                <input type="text" value="" class="form-control is-valid" id="Titulo">
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+        
+              <div class="form-group has-success">
+                <label class="form-control-label" for="inputValid">Ramo</label>
+                <input type="text" value="" class="form-control is-valid" id="Ramo">
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+        
+              <div class="form-group has-success">
+                <label class="form-control-label" for="inputValid">Fecha</label>
+                <input type="text" value="" class="form-control is-valid" id="Fecha">
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+        
+              <div class="form-group has-success">
+                <label class="form-control-label" for="inputValid">Comentario</label>
+                <textarea class="form-control" id="Comentario" rows="3"></textarea>
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+        
+              <button type="submit" class="btn btn-primary" id="boton_formulario">Agregar</button>
+        
+            </form>
+          </div>
+          <div class="tab-pane fade" id="Detalle_historias">
+            <div class="card border-success mb-3">
+              <div class="card-body">
+                <h4 class="card-title" id=Detalle_titulo >Card title</h4>
+                <h6 class="card-subtitle mb-2 text-muted" id="Detalle_fecha">Card subtitle</h6>
+                <p class="card-text" id="Detalle_comentario">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link" id="Detalle_ramo">Card link</a>
+              </div>
+            </div>
+          </div>
+        </div>        
+    
+      </div>
+      <div class="tab-pane fade" id="profile">
+        
+      </div>
+      <div class="tab-pane fade" id="detallada">
+        
+        
+
+      </div>
+      <div class="tab-pane fade" id="horas"><!--HORAS-->
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#General_horas" id="general_hor">General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Editar_horas"  id="editar_hor">Agregar</a>
+          </li>
+        </ul> 
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade show active" id="General_horas">
+            <table class="table condensed">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>-</th>
+                  <th>-</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_horas">
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="Editar_horas">
+            <div class="card border-success mb-3">
+              <div class="card-body">
+                <h4 class="card-title" >Cambiar Hora <a id="cambio_hora"></a> por </h4>
+                <p class="card-text" >
+                  <div class="form-group has-success">
+                    <input type="text" value="" class="form-control" id="Hora_editada">
+                    <input type="hidden" value="" class="form-control" id="row_hora">
+                  </div>
+                </p>
+                <button class="btn btn-success" id="cambiar_hora">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+        
+        
+      </div>
+      <div class="tab-pane fade" id="clases">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#General_">General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Editar_">Agregar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Detalle_">Detalle</a>
+          </li>
+        </ul> 
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade show active" id="General_">
+            
+          </div>
+          <div class="tab-pane fade" id="Editar_">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          </div>
+          <div class="tab-pane fade" id="Detalle_">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <!--
+    <h1>💖 Hello World!</h1>
+    <p>Welcome to your Electron application.</p>
+    -->
+    <script src="./pagina1.js" ></script>
+  </body>
+
+</html>
